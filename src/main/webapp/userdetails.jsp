@@ -13,16 +13,17 @@
 
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"
-         style="background-color: deeppink">
+         style="background-color: white">
         <div>
-            <a href="https://www.javaguides.net" class="navbar-brand"> Users
-                List </a>
+            <a class="navbar-brand">
+                Users List
+            </a>
         </div>
 
-        <ul class="navbar-nav">
-            <li><a href="<%=request.getContextPath()%>/list"
-                   class="nav-link">Users</a></li>
-        </ul>
+<%--        <ul class="navbar-nav">--%>
+<%--            <li><a href="<%=request.getContextPath()%>/list"--%>
+<%--                   class="nav-link">Users</a></li>--%>
+<%--        </ul>--%>
     </nav>
 </header>
 <br>
