@@ -14,11 +14,11 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"
          style="background-color: white">
-        <div>
-            <a class="navbar-brand">
-                Users List
-            </a>
-        </div>
+<%--        <div>--%>
+<%--            <a class="navbar-brand">--%>
+<%--                Users List--%>
+<%--            </a>--%>
+<%--        </div>--%>
 
 <%--        <ul class="navbar-nav">--%>
 <%--            <li><a href="<%=request.getContextPath()%>/list"--%>
@@ -33,8 +33,8 @@
 
     <div class="container">
         <h3 class="text-center">List of Users</h3>
-        <hr>
-        <div class="container text-left">
+        <br>
+        <div class="container text-center">
 
             <a href="<%=request.getContextPath()%>/new" class="btn btn-primary">Add
                 New User</a>

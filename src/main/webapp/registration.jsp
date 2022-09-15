@@ -14,14 +14,14 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-dark"
          style="background-color: white">
-        <div>
-            <a class="navbar-brand"> Registration </a>
-        </div>
+<%--        <div>--%>
+<%--            <a class="navbar-brand"> Registration </a>--%>
+<%--        </div>--%>
 
         <ul class="navbar-nav">
             <li>
                 <a href="<%=request.getContextPath()%>/list">
-                Users
+                Users List
                 </a>
             </li>
         </ul>
