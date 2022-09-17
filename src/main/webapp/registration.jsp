@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>Registration</title>
+    <title>Add activity</title>
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -41,10 +41,10 @@
                     <caption>
                         <h2>
                             <c:if test="${user != null}">
-                                Edit User
+                                Edit your activity
                             </c:if>
                             <c:if test="${user == null}">
-                                Add New User
+                                Add your activity
                             </c:if>
                         </h2>
                     </caption>
@@ -66,7 +66,7 @@
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label>User Age</label> <input type="text"
+                        <label>Activity</label> <input type="text"
                                                            value="<c:out value='${user.age}' />" class="form-control"
                                                            name="age">
                     </fieldset>
