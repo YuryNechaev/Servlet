@@ -13,6 +13,7 @@ public class UserDAO {
 
     private static final String SELECT_USER_BY_ID = "select id,first_name,last_name, age from users where id =?;";
     private static final String SELECT_ALL_USERS = "select * from users;";
+
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "UPDATE users SET first_name = ?, last_name= ?, age =? where id = ?;";
     private static final String INSERT_USERS_SQL = "INSERT INTO users" +

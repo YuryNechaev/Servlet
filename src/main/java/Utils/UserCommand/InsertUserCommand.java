@@ -1,5 +1,7 @@
-package Utils;
+package Utils.UserCommand;
 
+import Utils.Command;
+import Utils.Util;
 import dao.UserDAO;
 import entities.User;
 
@@ -9,7 +11,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class InsertUserCommand implements Command{
+public class InsertUserCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         insertUser(request, response, Util.getConnection());

@@ -1,6 +1,8 @@
-package Utils;
+package Utils.UserCommand;
 
 import Controllers.UserServlet;
+import Utils.Command;
+import Utils.Util;
 import dao.UserDAO;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +11,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class DeleteUserCommand implements Command{
+public class DeleteUserCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         deleteUser(request, response, Util.getConnection());

@@ -1,6 +1,7 @@
-package Utils;
+package Utils.UserCommand;
 
-import Controllers.UserServlet;
+import Utils.Command;
+import Utils.Util;
 import dao.UserDAO;
 import entities.User;
 
@@ -13,7 +14,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
-public class ListUserCommand implements Command{
+public class ListUserCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         listUser(request, response, Util.getConnection());

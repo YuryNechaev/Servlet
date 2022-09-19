@@ -1,6 +1,8 @@
-package Utils;
+package Utils.UserCommand;
 
 import Controllers.UserServlet;
+import Utils.Command;
+import Utils.Util;
 import dao.UserDAO;
 import entities.User;
 
@@ -10,7 +12,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class UpdateUserCommand implements Command{
+public class UpdateUserCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
         updateUser(request, response, Util.getConnection());

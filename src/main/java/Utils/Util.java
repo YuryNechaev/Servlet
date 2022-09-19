@@ -1,5 +1,8 @@
 package Utils;
 
+import Utils.ActivityCommand.*;
+import Utils.UserCommand.*;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,6 +20,12 @@ public class Util {
         roots.put("/delete", new DeleteUserCommand());
         roots.put("/update", new UpdateUserCommand());
         roots.put("/edit", new ShowEditFormCommand());
+        roots.put("/activities", new ListActivitiesCommand());
+        roots.put("/newActivity", new ShowNewFormActivityCommand());
+        roots.put("/insertActivity", new InsertActivityCommand());
+        roots.put("/editActivity", new ShowActivityEditFormCommand());
+        roots.put("/deleteActivity", new DeleteActivityCommand());
+        roots.put("/updateActivity", new UpdateActivityCommand());
 
     }
 
@@ -36,7 +45,7 @@ public class Util {
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.postgresql.Driver");
 
-        return DriverManager.getConnection("jdbc:postgresql://130.211.61.134:5432/postgres", "postgres", "postgres");
+        return DriverManager.getConnection("jdbc:postgresql://35.195.218.82:5432/postgres", "postgres", "postgres");
     }
 
 //    public static void main(String[] args) throws SQLException, ClassNotFoundException {

@@ -12,18 +12,13 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark"
-         style="background-color: white">
-<%--        <div>--%>
-<%--            <a class="navbar-brand">--%>
-<%--                Users List--%>
-<%--            </a>--%>
-<%--        </div>--%>
+    <nav class="navbar navbar-expand-lg navbar-dark"
+         style="background-color: dimgray">
 
-<%--        <ul class="navbar-nav">--%>
-<%--            <li><a href="<%=request.getContextPath()%>/list"--%>
-<%--                   class="nav-link">Users</a></li>--%>
-<%--        </ul>--%>
+        <ul class="navbar-nav">
+            <li><a href="<%=request.getContextPath()%>/activities"
+                   class="nav-link" >Activities</a></li>
+        </ul>
     </nav>
 </header>
 <br>
@@ -32,21 +27,21 @@
     <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
     <div class="container">
-        <h3 class="text-center">List of Users</h3>
+        <h3 class="text-center">List of Uses</h3>
         <br>
-        <div class="container text-center">
+        <div class="container text-left">
 
             <a href="<%=request.getContextPath()%>/new" class="btn btn-primary">Add
-                New User</a>
+                New User </a>
         </div>
         <br>
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
+                <th>Name</th>
+                <th>Activity</th>
+                <th>Time</th>
                 <th>Actions</th>
             </tr>
             </thead>

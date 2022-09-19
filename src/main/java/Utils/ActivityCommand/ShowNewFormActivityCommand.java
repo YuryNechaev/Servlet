@@ -1,4 +1,7 @@
-package Utils;
+package Utils.ActivityCommand;
+
+import Utils.Command;
+import Utils.Util;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -7,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 
-public class ShowNewFormCommand implements Command{
+public class ShowNewFormActivityCommand implements Command {
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        showNewForm(request, response, Util.getConnection());
+        showNewActivityForm(request, response, Util.getConnection());
     }
-    public static void showNewForm (HttpServletRequest request, HttpServletResponse response, Connection conn)
+    public static void showNewActivityForm (HttpServletRequest request, HttpServletResponse response, Connection conn)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("registration.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("newActivity.jsp");
         dispatcher.forward(request, response);
     }
 }

@@ -12,18 +12,12 @@
 <body>
 
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark"
-         style="background-color: white">
-<%--        <div>--%>
-<%--            <a class="navbar-brand"> Registration </a>--%>
-<%--        </div>--%>
+    <nav class="navbar navbar-expand-lg navbar-dark"
+         style="background-color: dimgray">
 
         <ul class="navbar-nav">
-            <li>
-                <a href="<%=request.getContextPath()%>/list">
-                Users List
-                </a>
-            </li>
+            <li><a href="<%=request.getContextPath()%>/list"
+                   class="nav-link" >Users</a></li>
         </ul>
     </nav>
 </header>
@@ -54,19 +48,19 @@
                     </c:if>
 
                     <fieldset class="form-group">
-                        <label>First Name</label> <input type="text"
+                        <label>Name</label> <input type="text"
                                                         value="<c:out value='${user.firstName}' />" class="form-control"
                                                         name="firstName" required="required">
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label>Last Name</label> <input type="text"
+                        <label>Type of activity</label> <input type="text"
                                                          value="<c:out value='${user.lastName}' />" class="form-control"
                                                          name="lastName">
                     </fieldset>
 
                     <fieldset class="form-group">
-                        <label>Activity</label> <input type="text"
+                        <label>Time</label> <input type="text"
                                                            value="<c:out value='${user.age}' />" class="form-control"
                                                            name="age">
                     </fieldset>
