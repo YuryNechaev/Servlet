@@ -26,6 +26,7 @@ public class Util {
         roots.put("/editActivity", new ShowActivityEditFormCommand());
         roots.put("/deleteActivity", new DeleteActivityCommand());
         roots.put("/updateActivity", new UpdateActivityCommand());
+        roots.put("/list", new ListUserCommand());
 
     }
 
