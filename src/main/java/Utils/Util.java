@@ -32,7 +32,7 @@ public class Util {
     public static Command getRootFromMap(String action){
         Command command;
         if(!roots.containsKey(action)) {
-            command=new ListUserCommand();
+            command=new ListActivitiesCommand();
         }
         else {
             command = roots.get(action);

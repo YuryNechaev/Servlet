@@ -42,7 +42,7 @@
                 <th>Activity</th>
                 <th>Date</th>
                 <th>Duration</th>
-                <th>Status</th>
+<%--                <th>Status</th>--%>
                 <th>Actions</th>
             </tr>
             </thead>
@@ -56,7 +56,7 @@
                     <td><c:out value="${activity.activityType}" /></td>
                     <td><c:out value="${activity.activityDate}" /></td>
                     <td><c:out value="${activity.prolongation}" /></td>
-                    <td><c:out value="${activity.status}" /></td>
+<%--                    <td><c:out value="${activity.status}" /></td>--%>
                     <td><c:if test="${activity.status.equals('valid')}">
                         <a href="editActivity?id=<c:out value='${activity.id}' />">Edit</a>
                         &nbsp;&nbsp;&nbsp;&nbsp; <a href="deleteActivity?id=<c:out value='${activity.id}' />">Delete</a>
