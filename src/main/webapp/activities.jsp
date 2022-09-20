@@ -61,7 +61,7 @@
                         <a href="editActivity?id=<c:out value='${activity.id}' />">Edit</a>
                         &nbsp;&nbsp;&nbsp;&nbsp; <a href="deleteActivity?id=<c:out value='${activity.id}' />">Delete</a>
                     </c:if>
-                        <c:if test="${activity.status.equals('unvalid')}">
+                        <c:if test="${!activity.status.equals('valid')}">
                                 Submitted
                         </c:if>
                     </td>
