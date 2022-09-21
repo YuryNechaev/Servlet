@@ -45,6 +45,8 @@
 
                     <c:if test="${activity != null}">
                         <input type="hidden" name="id" value="<c:out value='${activity.id}' />" />
+                        <input type="hidden" name="activityDate" value="<c:out value='${activity.activityDate}' />" />
+                        <input type="hidden" name="status" value="<c:out value='${activity.status}' />" />
                     </c:if>
 
                     <fieldset class="form-group">
@@ -59,13 +61,13 @@
                                                          name="activityType">
                     </fieldset>
 
-                    <fieldset class="form-group">
-                        <label>Date</label> <input type="text"
-                                                           value="<c:out value='${activity.activityDate}' />" class="form-control"
-                                                           name="activityDate">
-                    </fieldset>
+<%--                    <fieldset class="form-group">--%>
+<%--                        <label>Date</label> <input type="text"--%>
+<%--                                                           value="<c:out value='${activity.activityDate}' />" class="form-control"--%>
+<%--                                                           name="activityDate">--%>
+<%--                    </fieldset>--%>
                         <fieldset class="form-group">
-                            <label>Prolongation</label> <input type="text"
+                            <label>Duration</label> <input type="text"
                                                        value="<c:out value='${activity.prolongation}' />" class="form-control"
                                                        name="prolongation">
                         </fieldset>

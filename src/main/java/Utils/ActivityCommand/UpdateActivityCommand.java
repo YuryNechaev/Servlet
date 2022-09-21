@@ -3,14 +3,13 @@ package Utils.ActivityCommand;
 import Utils.Command;
 import Utils.Util;
 import dao.ActivityDAO;
-import dao.UserDAO;
 import entities.Activity;
-import entities.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
 
 public class UpdateActivityCommand implements Command {
@@ -25,7 +24,13 @@ public class UpdateActivityCommand implements Command {
         updatedActivity.setId(id);
         updatedActivity.setStudentName(request.getParameter("studentName"));
         updatedActivity.setActivityType(request.getParameter("activityType"));
-        updatedActivity.setActivityDate(request.getParameter("activityDate"));
+        System.out.println(request.getParameter("id"));
+        System.out.println(request.getParameter("studentName"));
+        System.out.println(request.getParameter("activityType"));
+        System.out.println(request.getParameter("activityDate"));
+        System.out.println(request.getParameter("prolongation"));
+        System.out.println(request.getParameter("status"));
+        updatedActivity.setActivityDate(Date.valueOf(request.getParameter("activityDate")));
         updatedActivity.setProlongation(Integer.parseInt(request.getParameter("prolongation")));
         updatedActivity.setStatus(request.getParameter("status"));
         ActivityDAO.updateActivity(updatedActivity, conn);

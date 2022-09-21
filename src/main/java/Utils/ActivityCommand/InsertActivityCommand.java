@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class InsertActivityCommand implements Command {
     @Override
@@ -21,7 +23,7 @@ public class InsertActivityCommand implements Command {
         Activity newActivity = new Activity();
         newActivity.setStudentName(request.getParameter("studentName"));
         newActivity.setActivityType(request.getParameter("activityType"));
-        newActivity.setActivityDate(request.getParameter("activityDate"));
+        newActivity.setActivityDate(Date.valueOf(LocalDate.now()));
         newActivity.setProlongation(Integer.parseInt(request.getParameter("prolongation")));
         ActivityDAO.insertActivity(newActivity, conn);
         response.sendRedirect("activities");

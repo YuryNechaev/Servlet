@@ -2,22 +2,21 @@ package dao;
 
 import entities.Activity;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityDAO {
 
-    private static final String SELECT_ACTIVITY_BY_ID = "select id, student_name, activity_type, activity_data, prolongation, status from activities where id =?;";
+    private static final String SELECT_ACTIVITY_BY_ID = "select id, student_name, activity_type, activity_data, prolongation, status from activity where id =?;";
 
-    private static final String SELECT_ALL_ACTIVITIES = "select * from activities;";
+    private static final String SELECT_ALL_ACTIVITIES = "select * from activity;";
 
-    private static final String DELETE_ACTIVITY_SQL = "delete from activities where id = ?;";
-    private static final String UPDATE_ACTIVITY_SQL = "UPDATE activities SET student_name = ?, activity_type= ?,activity_data= ?, prolongation =?, status=? where id = ?;";
-    private static final String INSERT_ACTIVITY_SQL = "INSERT INTO activities" +
+    private static final String DELETE_ACTIVITY_SQL = "delete from activity where id = ?;";
+    private static final String UPDATE_ACTIVITY_SQL = "UPDATE activity SET student_name = ?, activity_type= ?,activity_data= ?, prolongation =?, status=? where id = ?;";
+    private static final String INSERT_ACTIVITY_SQL = "INSERT INTO activity" +
             "  (student_name, activity_type, activity_data, prolongation, status) VALUES " +
             " (?, ?, ?, ?, ?);";
 
@@ -29,7 +28,7 @@ public class ActivityDAO {
         int i = 1;
         stm.setString(i++, activity.getStudentName());
         stm.setString(i++, activity.getActivityType());
-        stm.setString(i++, activity.getActivityDate());
+        stm.setDate(i++, Date.valueOf(LocalDate.now()));
         stm.setInt(i++, activity.getProlongation());
         stm.setString(i++, activity.getStatus());
 
@@ -54,7 +53,7 @@ public class ActivityDAO {
                 activity.setId(id);
                 activity.setStudentName(rs.getString("student_name"));
                 activity.setActivityType(rs.getString("activity_type"));
-                activity.setActivityDate(rs.getString("activity_data"));
+                activity.setActivityDate(rs.getDate("activity_data"));
                 activity.setProlongation(rs.getInt("prolongation"));
                 activity.setStatus(rs.getString("status"));
             }
@@ -75,7 +74,7 @@ public class ActivityDAO {
             activity.setId(rs.getInt("id"));
             activity.setStudentName(rs.getString("student_name"));
             activity.setActivityType(rs.getString("activity_type"));
-            activity.setActivityDate(rs.getString("activity_data"));
+            activity.setActivityDate(rs.getDate("activity_data"));
             activity.setProlongation(rs.getInt("prolongation"));
             activity.setStatus(rs.getString("status"));
             list.add(activity);
@@ -104,7 +103,7 @@ public class ActivityDAO {
             int i = 1;
             statement.setString(i++, activity.getStudentName());
             statement.setString(i++, activity.getActivityType());
-            statement.setString(i++, activity.getActivityDate());
+            statement.setDate(i++, activity.getActivityDate());
             statement.setInt(i++, activity.getProlongation());
             statement.setString(i++, activity.getStatus());
             statement.setInt(i++, activity.getId());
