@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Comparator;
 import java.util.List;
 
 public class ListActivitiesCommand implements Command {
@@ -24,6 +25,8 @@ public class ListActivitiesCommand implements Command {
             throws SQLException, IOException, ServletException {
 
         List<Activity> listActivities = ActivityDAO.getActivityList(conn);
+        Comparator <Activity> comparator = Comparator.comparingInt(Activity::getId);
+        listActivities.sort(comparator);
         request.setAttribute("listActivities", listActivities);
         RequestDispatcher dispatcher = request.getRequestDispatcher("activities.jsp");
         dispatcher.forward(request, response);
